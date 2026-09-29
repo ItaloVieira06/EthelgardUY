@@ -1,0 +1,22 @@
+[
+  { "nivel": 1, "nome": "Azul Fraco", "bonusProficiencia": 2 },
+  { "nivel": 2, "nome": "Azul Vívido", "bonusProficiencia": 2 },
+  { "nivel": 3, "nome": "Azul Ascendente", "bonusProficiencia": 2 },
+  { "nivel": 4, "nome": "Verde Fraco", "bonusProficiencia": 3 },
+  { "nivel": 5, "nome": "Verde Vívido", "bonusProficiencia": 3 },
+  { "nivel": 6, "nome": "Verde Ascendente", "bonusProficiencia": 3 },
+  { "nivel": 7, "nome": "Amarelo Fraco", "bonusProficiencia": 4 },
+  { "nivel": 8, "nome": "Amarelo Vívido", "bonusProficiencia": 4 },
+  { "nivel": 9, "nome": "Amarelo Ascendente", "bonusProficiencia": 4 },
+  { "nivel": 10, "nome": "Laranja Fraco", "bonusProficiencia": 5 },
+  { "nivel": 11, "nome": "Laranja Vívido", "bonusProficiencia": 5 },
+  { "nivel": 12, "nome": "Laranja Ascendente", "bonusProficiencia": 5 },
+  { "nivel": 13, "nome": "Vermelho Fraco", "bonusProficiencia": 6 },
+  { "nivel": 14, "nome": "Vermelho Vívido", "bonusProficiencia": 6 },
+  { "nivel": 15, "nome": "Vermelho Ascendente", "bonusProficiencia": 6 },
+  { "nivel": 16, "nome": "Branco Mutado", "bonusProficiencia": 6 },
+  { "nivel": 17, "nome": "Ameaça", "bonusProficiencia": 7 },
+  { "nivel": 18, "nome": "Semideus", "bonusProficiencia": 8 },
+  { "nivel": 19, "nome": "Singularidade", "bonusProficiencia": 9 },
+  { "nivel": 20, "nome": "Transcendido", "bonusProficiencia": 10 }
+]

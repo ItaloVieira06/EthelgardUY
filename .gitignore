@@ -1,0 +1,56 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Variáveis de ambiente
+.env
+.env.*
+!.env.example
+
+# Testes e cobertura
+coverage/
+*.lcov
+
+# Caches de ferramentas
+.vite/
+.eslintcache
+*.tsbuildinfo
+
+# Arquivos de sistema do Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Configurações locais do Claude Code (se você usar mais tarde)
+.claude/settings.local.json
+
+# Backups e exportações locais de fichas (dados de teste seus, não do projeto)
+exports/
+backups/
+*.local.json
+
+# Pacotes gerados e logs extras
+*.tgz
+npm-debug.log*
+pnpm-debug.log*
