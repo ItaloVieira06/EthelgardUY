@@ -1,4 +1,5 @@
 import type { Attributes } from "./attributes";
+import type { ManaMode } from "./mana-mode";
 import type { SkillKey } from "./skills";
 
 export interface SkillInput {
@@ -50,6 +51,11 @@ export interface Inputs {
   manaSpent: number;
   comebackPointsModifier: number; // net points during play: + granted by the game master, - spent
 
+  // Mana
+  manaMode: ManaMode; // "normal" or "simplified"
+  manaFromConsumables: number; // permanent points from consumable items (editable)
+  temporaryMana: number; // separate pool, not recovered when spent unless something external restores it (editable)
+
   // Bonuses from items and/or spells
   bonuses: ExternalBonuses;
   armorBase: number; // base of the defense: 10 without armor; armors can raise it
@@ -66,8 +72,9 @@ export interface Derived {
   baseBonuses: BaseBonuses; // from talents, added to the base formulas
   maxHp: number;
   currentHp: number; // maxHp - damageTaken
-  maxMana: number;
+  maxMana: number; //base by mode + talent, background, race, consumables
   currentMana: number; // maxMana - manaSpent
+  totalMana: number; // currentMana + temporaryMana (display only)
   speed: string;
   defense: number; //armor base + armor attribute + class attribute if unarmored + shield
   saveDc: number; 
