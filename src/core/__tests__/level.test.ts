@@ -1,11 +1,14 @@
 import { describe, it, expect } from "vitest";
-// import { bonusProficiencia } from "../regras/nivel";
+import { proficiencyBonus, type Nucleus } from "../rules/level";
+import tableJson from "../../content/nuclei.json";
 
-describe("bônus de proficiência", () => {
+const table = tableJson as Nucleus[];
+
+describe("proficiency bonus", () => {
   it.each([[1, 2], [4, 3], [15, 6], [16, 7], [20, 10]])(
-    "nível %i dá +%i",
-    (nivel, esperado) => {
-      // expect(bonusProficiencia(nivel)).toBe(esperado);
+    "level %i gives +%i",
+    (level: number, expected: number) => {
+      expect(proficiencyBonus(level, table)).toBe(expected);
     }
   );
 });
