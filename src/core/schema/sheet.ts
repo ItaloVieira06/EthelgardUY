@@ -17,6 +17,13 @@ export interface SkillInput {
   bonusPoints: number; // points from items or events, outside the base (not doubled by training)
 }
 
+export interface ExternalBonuses {
+  shield: number;
+  difficultyTest: number; 
+  damageReduction: number; 
+  perception: number;
+}
+
 export interface Inputs {
   // Identity
   name: string;
@@ -30,7 +37,7 @@ export interface Inputs {
 
   // Build choices (content IDs, not copied text)
   race: string;
-  level: number; // 1 to 20, chosen when building the sheet (set by the game master)
+  level: number;
   characterClass: string;
   subclass: string | null;
   background: string;
@@ -43,15 +50,18 @@ export interface Inputs {
   manaSpent: number;
   temporaryHp: number;
   temporaryMana: number;
+  comebackPointsModifier: number;
 
-  // TO CONFIRM (meaning not defined yet, kept from the original list):
-  // vida_media, mana_nvl, p_revirada, p_vida, p_mana
+  bonuses: ExternalBonuses;
+
+  // TO CONFIRM:
+  // vida_media, mana_nvl, p_vida, p_mana
 }
 
 export interface Derived {
   proficiencyBonus: number;
   nucleusName: string;
-  proeficiency: number;
+  proficiency: number;
   skillBonuses: Record<SkillKey, number>;
   maxHp: number;
   currentHp: number;
@@ -59,7 +69,9 @@ export interface Derived {
   currentMana: number;
   speed: string;
   attackBonus: number;
-  saveDc: number;
+  difficultyTest: number;
+  comebackPoints: number;
+  currentComebackPoints: number;
   damageReduction: number;
   passivePerception: number;
 }
