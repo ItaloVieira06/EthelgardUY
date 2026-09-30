@@ -4,6 +4,8 @@ import {
   defense,
   passivePerception,
   saveDc,
+  comebackPoints, 
+  currentComebackPoints
 } from "../rules/derived-stats";
 import type { Attributes } from "../schema/attributes";
 
@@ -120,5 +122,43 @@ describe("passive perception", () => {
 
   it("adds both bonuses", () => {
     expect(passivePerception(attributes.presence, 4, 1, 2)).toBe(22);
+  });
+});
+
+describe("comeback points", () => {
+  it.each([
+    [0, 0],
+    [1, 1],
+    [2, 1],
+    [3, 1],
+    [4, 2],
+    [5, 2],
+    [6, 3],
+    [7, 3],
+    [10, 5],
+  ])("presence %i gives %i", (presence, expected) => {
+    expect(comebackPoints(presence)).toBe(expected);
+  });
+
+  it("never returns a negative value", () => {
+    expect(comebackPoints(-1)).toBe(0);
+  });
+});
+
+describe("current comeback points", () => {
+  it("equals the base when the modifier is 0", () => {
+    expect(currentComebackPoints(3, 0)).toBe(3);
+  });
+
+  it("adds points granted by the game master (positive modifier)", () => {
+    expect(currentComebackPoints(3, 2)).toBe(5);
+  });
+
+  it("subtracts spent points (negative modifier)", () => {
+    expect(currentComebackPoints(3, -2)).toBe(1);
+  });
+
+  it("never goes below zero", () => {
+    expect(currentComebackPoints(1, -3)).toBe(0);
   });
 });
