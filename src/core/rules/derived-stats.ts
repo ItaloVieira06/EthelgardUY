@@ -64,6 +64,7 @@ export function passivePerception(
 }
 
 export function comebackPoints(presence: number): number {
+  if (presence <= 0) return 0;
   if (presence <= 1) return 1;
   return Math.floor(presence / 2);
 }
