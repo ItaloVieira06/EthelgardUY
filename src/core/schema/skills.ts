@@ -1,4 +1,4 @@
-import type { AttributeKey } from "./sheet";
+import type { AttributeKey } from "./attributes";
 
 export const SKILLS_BY_ATTRIBUTE = {
   strength: ["athletics", "fighting"],
